@@ -1,24 +1,39 @@
+/* eslint-disable react/prop-types */
 import './currentWeather.css';
 import { FaSun } from 'react-icons/fa';
-export default function CurrentWeather() {
+export default function CurrentWeather({ data }) {
 	return (
 		<div className='weather'>
 			<div className='top'>
 				<div>
-					<p className='city'>Belgrade</p>
-					<p className='weather-description'>Sunny</p>
+					<p className='city'>{data.city}</p>
+					<p className='weather-description'>{data.weather.description}</p>
 				</div>
 				<FaSun size={30} />
 			</div>
 			<div className='bottom'>
-				<p className='temperature'>18C</p>
+				<p className='temperature'>{Math.round(data.main.temp)}°C</p>
 				<div className='details'>
 					<div className='parameter-row'>
 						<span className='parameter-label '>Details</span>
-						<div className='parameter-row'>
-							<span className='parameter-label'>Feels like </span>
-							<span className='parameter-value'>22C </span>
-						</div>
+					</div>
+					<div className='parameter-row'>
+						<span className='parameter-label'>Feels like </span>
+						<span className='parameter-value'>
+							{Math.round(data.main.feels_like)}°C{' '}
+						</span>
+					</div>
+					<div className='parameter-row'>
+						<span className='parameter-label'>Wind</span>
+						<span className='parameter-value'>{data.wind.speed} m/s</span>
+					</div>
+					<div className='parameter-row'>
+						<span className='parameter-label'>Humidity</span>
+						<span className='parameter-value'>{data.main.humidity}%</span>
+					</div>
+					<div className='parameter-row'>
+						<span className='parameter-label'>Pressure</span>
+						<span className='parameter-value'>{data.main.pressure} hPa</span>
 					</div>
 				</div>
 			</div>
