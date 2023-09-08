@@ -1,8 +1,16 @@
-# React + Vite
+# React + Vite Weather app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Practice project using APIs in react
 
-Currently, two official plugins are available:
+Api used
+Geodb api - https://rapidapi.com/wirefreethought/api/geodb-cities/
+Weather - https://openweathermap.org/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to run
+
+```
+yarn
+yarn run
+```
+
+Change the .env.example file to .env and populate the constants (without the quotes)
